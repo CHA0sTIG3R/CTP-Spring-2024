@@ -1,0 +1,30 @@
+{% extends "base.html" %}
+
+{% block content %}
+<h1>AI Blog Writer</h1>
+<form id="promptForm" action="/generate" method="post">
+    <div class="form-group">
+        <label for="topic">Blog Topic:</label>
+        <input type="text" id="topic" name="topic" required>
+    </div>
+    <div class="form-group">
+        <label for="tone">Desired Tone:</label>
+        <select id="tone" name="tone">
+            <option value="informative">Informative</option>
+            <option value="casual">Casual</option>
+            <option value="persuasive">Persuasive</option>
+            <option value="formal">Formal</option>
+            <option value="humorous">Humorous</option>
+        </select>
+    </div>
+    <div class="form-group">
+        <label for="length">Length (words):</label>
+        <input type="number" id="length" name="length" required>
+    </div>
+    <div class="form-group">
+        <label for="instructions">Special Instructions:</label>
+        <textarea id="instructions" name="instructions"></textarea>
+    </div>
+    <button type="submit">Generate Blog Post</button>
+</form>
+{% endblock %}

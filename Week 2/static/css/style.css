@@ -1,0 +1,83 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f0f0f0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.container {
+    width: 50%; /* Adjust the width as needed */
+    background-color: #fff;
+    padding: 20px;
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+    border-radius: 10px;
+}
+
+h1 {
+    color: #333;
+    text-align: center;
+}
+
+.form-group {
+    margin-bottom: 15px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+input[type="text"],
+input[type="number"],
+select,
+textarea {
+    width: 60%; /* Smaller width for form elements */
+    padding: 8px;
+    margin: 5px 0 22px 0;
+    display: block; /* Centered by the form-group */
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    background: #f1f1f1;
+}
+
+button {
+    background-color: #4CAF50;
+    color: white;
+    padding: 10px 15px;
+    margin: 8px 0;
+    border: none;
+    cursor: pointer;
+    width: 30%; /* Adjust button width */
+    display: block; /* Ensure button is block level for margin auto */
+    margin-left: auto;
+    margin-right: auto;
+    border-radius: 4px;
+}
+
+button:hover {
+    opacity: 0.8;
+}
+
+a {
+    display: block; /* Make the link block level for centering */
+    margin-top: 20px;
+    text-align: center; /* Center the text for the link */
+    text-decoration: none;
+    background-color: #4CAF50;
+    color: white;
+    padding: 10px 15px;
+    border: none;
+    cursor: pointer;
+    width: 30%;
+    margin-left: auto;
+    margin-right: auto;
+    border-radius: 4px;
+}
+
+article {
+    background-color: #fff;
+    padding: 20px;
+    margin-top: 20px;
+}
