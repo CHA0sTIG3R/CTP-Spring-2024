@@ -9,9 +9,12 @@ client = OpenAI()
 
 def generate_post(tone, topic, length, instructions):
     prompt = f"Write a {tone} blog post about {topic}. Make sure the blog post is no longer than {length} words and ends with a conclusion. {instructions}"
-    response = client.completions.create(
-        model="gpt-3.5-turbo-instruct",
-        prompt=prompt,
+    response = client.chat.completions.create(
+        model="gpt-3.5-turbo",
+        messages=[
+            {"role": "system", "content": f"You are an expert {tone} blogger and creative writer."},
+            {"role": "user", "content": prompt}
+        ],
         max_tokens=600,
         temperature=0.7,
         top_p=0.9,
@@ -19,7 +22,7 @@ def generate_post(tone, topic, length, instructions):
         presence_penalty=0,
         stop=["In conclusion", "In summary"]
     )
-    return response.choices[0].text.strip()
+    return response.choices[0].message.content.strip()
 
 @app.route('/')
 def index():
