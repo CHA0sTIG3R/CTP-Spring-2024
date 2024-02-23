@@ -1,9 +1,21 @@
 {% extends "base.html" %}
 
 {% block content %}
-<h1>Generated Blog Post</h1>
-<article>
-    {{ generated_text|safe }}
-</article>
-<a href="{{ url_for('index') }}">Generate another post</a>
+<div class="container mt-5"> <!-- Increase margin-top if needed -->
+    <div class="row justify-content-center">
+        <div class="col-md-8 col-lg-12"> <!-- Adjusted for wider width -->
+            <div class="card bg-secondary text-white">
+                <div class="card-body">
+                    <h1 class="card-title">Generated Blog Post</h1>
+                    <article class="card-text">
+                        {{ generated_text|safe }}
+                    </article>
+                    <div class="mt-3 text-center">
+                        <a href="{{ url_for('index') }}" class="btn btn-light">Generate another post</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
 {% endblock %}
